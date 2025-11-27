@@ -1,0 +1,20 @@
+# وابستگی‌ها
+node_modules/
+npm-debug.log*
+
+# فایل‌های سیستمی
+.DS_Store
+Thumbs.db
+
+# فایل‌های محیطی
+.env
+.env.local
+
+# لاگ‌ها
+*.log
+
+# فایل‌های ایدئ
+.vscode/
+.idea/
+*.swp
+*.swo
