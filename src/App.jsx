@@ -12,15 +12,12 @@ function App() {
     expectedReturn: value[2],
     duration: value[3],
   });
-  function foo() {
-    setValue([123, 1234, 1256, 1453]);
-  }
   console.log(value);
   console.log(calculate);
   return (
     <>
       <Header />
-      <UserFrom />
+      <UserFrom setValue={[setValue]} />
       <Table />
     </>
   );
