@@ -5,20 +5,26 @@ import UserFrom from "./components/UserFrom";
 import { calculateInvestmentResults } from "./util/investment";
 
 function App() {
-  const [value, setValue] = useState([]);
-  const calculate = calculateInvestmentResults({
-    initialInvestment: value[0],
-    annualInvestment: value[1],
-    expectedReturn: value[2],
-    duration: value[3],
+  const [value, setValue] = useState({
+    initialInvestment: 1000,
+    annualInvestment: 1200,
+    expectedReturn: 600,
+    duration: 10,
   });
-  console.log(value);
-  console.log(calculate);
+  const inputIsvaild = value.duration >= 1;
+  function getform(inputidentifer, newValue) {
+    setValue((prev) => {
+      return {
+        ...prev,
+        [inputidentifer]: +newValue,
+      };
+    });
+  }
   return (
     <>
       <Header />
-      <UserFrom setValue={[setValue]} />
-      <Table />
+      <UserFrom getform={getform} value={value} />
+      {inputIsvaild && <Table value={value} />}
     </>
   );
 }

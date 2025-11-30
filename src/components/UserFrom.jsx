@@ -1,22 +1,6 @@
 import { useState } from "react";
 
-export default function UserFrom() {
-  const [value, setValue] = useState({
-    initialInvestment: 1000,
-    annualInvestment: 1200,
-    expectedReturn: 600,
-    duration: 10,
-  });
-
-  function getform(inputidentifer, newValue) {
-    setValue((prev) => {
-      return {
-        ...prev,
-        [inputidentifer]: newValue,
-      };
-    });
-  }
-  console.log("value", value);
+export default function UserFrom({ getform, value }) {
   return (
     <>
       <form id="user-input">
